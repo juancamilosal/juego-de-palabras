@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <ng-container *ngIf="!isReady">
+        <div class="row mt-5">
+            <div class="pantalla col-12 text-center justify-content-center ">
+                <h1 class="mb-5 pt-5">CUANDO ESTÉN LISTOS PRESIONE INICIAR</h1>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-4 mt-5">
+                <label class="palabras mb-2">Ingrese aquí la frase o palabra</label> <br>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm"
+                       [(ngModel)]="palabras" (keydown.enter)="ingresarPalabras(palabras)">
+                <div class="mt-3">
+                    <button class="btn btn-secondary" (click)="ingresarPalabras(palabras)">INGRESAR</button>
+                </div>
+            </div>
+            <div class="col-8 mt-5">
+                <h1 class="text-center mt-2">Palabras ingresadas</h1>
+                <div class="contenedor-palabras-ingresadas">
+                    <div>
+                        <p class="palabras-ingresadas ms-5"
+                           *ngFor="let palabra of palabrasIngresadas; let i=index">{{i +1 + '- ) '}} {{palabra}} <i
+                                class="bi bi-x-circle-fill icon-rojo ms-5 " (click)="eliminarPalabra(i)">  Eliminar</i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  text-center">
+                <button class="iniciar btn btn-success mx-4 mt-4" (click)="iniciar()" [disabled]="isBottonSatartActive">INICIAR</button>
+                <button class="regresar btn btn-primary mx-4 mt-4" (click)="regresar()">REGRESAR</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<ng-container *ngIf="isReady">
+    <div class="row mt-5">
+        <app-temporizador *ngIf="isTemporizadorActived"></app-temporizador>
+        <div class="pantalla col-12 text-center justify-content-center ">
+            <h1 class="mb-5 pt-5">{{palabrasEnPantalla}}</h1>
+        </div>
+    </div>
+    <div class="row text-center mt-5">
+    <div>
+        <ng-container *ngIf="isBottonActive">
+        <button class="correct btn btn-success mx-4" (click)="siguientePalabra(true)"><i
+                class="imagen bi bi-check-circle mx-3" ></i>CORRRECTO
+        </button>
+        <button class="incorrect btn btn-danger mx-4"   (click)="siguientePalabra(false)"><i
+                class="imagen bi bi-x-circle mx-3"></i>PASAR
+        </button>
+        </ng-container>
+    </div>
+        <div class="row mt-5">
+            <div class="col text-end">
+                <h1>PUNTAJE: </h1>
+            </div>
+            <div class="col text-start">
+                <input class="puntaje btn btn-primary " placeholder="0" [value]="puntaje" disabled>
+            </div>
+        </div>
+        <div class="col-12  text-center">
+            <button class="regresar btn btn-primary mx-4 mt-4" (click)="volverAlJuego()"  *ngIf="isBackActived" >VOLVER A JUGAR</button>
+        </div>
+</div>
+</ng-container>
+
+
+
+
+
+

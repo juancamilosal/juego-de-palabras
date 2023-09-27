@@ -1,0 +1,36 @@
+<div class="container ">
+    <div class="row mt-5"  >
+        <app-temporizador *ngIf="IsStarted"></app-temporizador>
+        <div class="pantalla col-12 text-center justify-content-center ">
+            <h1 class="listado-palabras mb-5 pt-5">{{listaDePalabras}}</h1>
+        </div>
+    </div>
+    <ng-container *ngIf="isButtonActive">
+        <div class="col-12  text-center">
+            <button class="iniciar btn btn-success mx-4 mt-4" (click)="iniciar()" >INICIAR</button> <br>
+            <button class="regresar btn btn-primary mx-4 mt-4" (click)="regresar()">REGRESAR</button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="IsStarted">
+        <div class="row text-center mt-5">
+            <div>
+                <button class="correct btn btn-success mx-4" (click)="siguientePalabra(true)"><i
+                        class="imagen bi bi-check-circle mx-3"></i>CORRRECTO
+                </button>
+                <button class="incorrect btn btn-danger mx-4" (click)="siguientePalabra(false)"><i
+                        class="imagen bi bi-x-circle mx-3"></i>PASAR
+                </button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="IsScoringActivated">
+        <div class="row mt-5">
+            <div class="col text-end">
+                <h1>PUNTAJE:</h1>
+            </div>
+            <div class="col text-start">
+                <input class="puntaje btn btn-primary " placeholder="0" [value]="puntaje" disabled>
+            </div>
+        </div>
+    </ng-container>
+</div>
