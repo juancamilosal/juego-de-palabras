@@ -1,27 +1,46 @@
-.imagen{
-  width:  40px;
+.imagen {
+  width: 40px;
   height: 40px;
   color: white;
 }
 
-.incorrect{
+.incorrect {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.pantalla{
+.pantalla {
   background-color: aliceblue;
- border: 2px solid #0001;
+  border: 2px solid #191919;
 }
 
-.puntaje{
-  width: 100px;
-  height: 50px;
-  font-size: 50px;
+.puntaje {
+  color: #000000;
+  background-image: linear-gradient(to right top, #edff00, #f0ff48, #f3ff6b, #f6ff89, #f8ffa4, #f6f7a1, #f4ef9f, #f1e79d, #edd57e, #eac260, #e9ae44, #e89828);
+  border-radius: 10px;
+  border: black 2px solid;
+  font-size: 25px;
+  width: 60px;
+  font-family: 'Titan One', cursive;
 }
 
-.iniciar{
-  background: #006e00;
+.puntuacionFinal{
+  font-size: 95px;
+  width: 150px;
+  font-family: 'Titan One', cursive;
+}
+
+h2{
+  font-size: 30px;
+  font-family: 'Titan One', cursive;
+}
+.titulo-puntaje{
+  font-size: 100px;
+  font-family: 'Titan One', cursive;
+}
+
+.iniciar {
+  background: #a656c0;
   cursor: pointer;
   border: none;
   padding: 16px 41px;
@@ -45,7 +64,7 @@
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #1dff1c, #1c7908, #178d4a, #00ff01,  #1dff1c, #1c7908, #000000, #ffffff);
+  background: linear-gradient(45deg, #C400FFFF, #DE6AEAFF, #9C62A9FF, #C400FFFF, #DE6AEAFF, #9C62A9FF);
   background-size: 800%;
   border-radius: 10px;
   filter: blur(8px);
@@ -65,7 +84,7 @@
 }
 
 
-.regresar{
+.regresar {
   background: #0002ff;
   cursor: pointer;
   border: none;
@@ -98,8 +117,61 @@
 }
 
 
-
-h1{
+h1 {
   text-transform: uppercase;
+  font-family: 'Titan One', cursive;
+  color: rgba(255, 244, 244, 0.07);
+  font-size: 80px;
+  font-weight: bold;
+  background-image: url("/assets/fondo-morado.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-clip: text;
+  -webkit-text-stroke: 0.1px #2a2a2a; /* Borde de 3px en color negro */
 }
 
+.listado-palabras-pantalla{
+  font-family: "Arial Black";
+  color: rgba(255, 244, 244, 0.07);
+  font-size: 80px;
+  font-weight: bold;
+  background-image: url("/assets/fondo-negro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-text-stroke: 0.1px #2a2a2a; /* Borde de 3px en color negro */
+}
+
+.correct{
+  background: #56ee57;
+  cursor: pointer;
+  border: none;
+  padding: 16px 32px;
+  color: #f3ebfd;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 24px;
+  transition: transform 0.3s ease; /* Agregamos una transición para que el cambio de tamaño sea suave */
+}
+
+.correct:hover {
+  transform: scale(1.1); /* Cuando el cursor se posa sobre el botón, se agranda un 10% */
+}
+
+.incorrect{
+  background: #e75656;
+  cursor: pointer;
+  border: none;
+  padding: 16px 32px;
+  color: #f3ebfd;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 24px;
+  transition: transform 0.3s ease; /* Agregamos una transición para que el cambio de tamaño sea suave */
+}
+
+.incorrect:hover {
+  transform: scale(1.1); /* Cuando el cursor se posa sobre el botón, se agranda un 10% */
+}

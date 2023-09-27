@@ -1,8 +1,8 @@
-<div class="container ">
+<div class="container-fluid">
     <div class="row mt-5"  >
         <app-temporizador *ngIf="IsStarted"></app-temporizador>
-        <div class="pantalla col-12 text-center justify-content-center ">
-            <h1 class="listado-palabras mb-5 pt-5">{{listaDePalabras}}</h1>
+        <div class="pantalla col-12 text-center justify-content-center mt-4">
+            <h1 [ngClass]="claseListadoPalabras">{{listaDePalabras}} </h1>
         </div>
     </div>
     <ng-container *ngIf="isButtonActive">
@@ -23,13 +23,13 @@
             </div>
         </div>
     </ng-container>
-    <ng-container *ngIf="IsScoringActivated">
+    <ng-container ><!--*ngIf="IsScoringActivated"-->
         <div class="row mt-5">
-            <div class="col text-end">
-                <h1>PUNTAJE:</h1>
+            <div class="col text-end mt-2">
+                <h2 [ngClass]="claseTituloPuntaje">PUNTAJE</h2>
             </div>
-            <div class="col text-start">
-                <input class="puntaje btn btn-primary " placeholder="0" [value]="puntaje" disabled>
+            <div class="col text-start mb-5">
+                <input  [ngClass]="clasePuntuacionFinal"  class="puntaje btn btn-dark" placeholder="0" [value]="puntaje" disabled>
             </div>
         </div>
     </ng-container>

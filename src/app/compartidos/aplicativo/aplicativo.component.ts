@@ -21,6 +21,9 @@ export class AplicativoComponent {
     isButtonActive: boolean = true;
     IsScoringActivated: boolean = false;
     listaDePalabras:any[]=['PRESIONE INICIAR']
+    claseListadoPalabras:string='listado-palabras mb-5 pt-5';
+    claseTituloPuntaje:string;
+    clasePuntuacionFinal:string;
 
 
 
@@ -60,6 +63,7 @@ export class AplicativoComponent {
         this.apiService.getWord().subscribe(data=>{
             this.listaDePalabras=data;
         })
+        this.claseListadoPalabras='listado-palabras-pantalla mb-5 pt-5'
         this.IsStarted = true;
         this.isButtonActive = false;
         this.IsScoringActivated = true;
@@ -72,7 +76,9 @@ export class AplicativoComponent {
         setTimeout(() => {
             this.listaDePalabras = ['TERMINÓ EL TIEMPO']
             this.IsStarted = false;
-            this.temporizador.stop()
+            this.temporizador.stop();
+            this.claseTituloPuntaje='titulo-puntaje';
+            this.clasePuntuacionFinal='puntuacionFinal';
             return;
         }, 60000);
     }
