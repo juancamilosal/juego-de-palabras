@@ -11,7 +11,8 @@
 
 .pantalla {
   background-color: aliceblue;
-  border: 2px solid #191919;
+  border: 2px  #c400ff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .puntaje {
@@ -25,6 +26,10 @@
 }
 
 .puntuacionFinal{
+  color: #000000;
+  background-image: linear-gradient(to right top, #edff00, #f0ff48, #f3ff6b, #f6ff89, #f8ffa4, #f6f7a1, #f4ef9f, #f1e79d, #edd57e, #eac260, #e9ae44, #e89828);
+  border-radius: 10px;
+  border: black 2px solid;
   font-size: 95px;
   width: 150px;
   font-family: 'Titan One', cursive;

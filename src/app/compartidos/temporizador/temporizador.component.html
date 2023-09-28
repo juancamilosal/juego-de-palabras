@@ -1,35 +1,35 @@
 <!--<div class="container">
   <div class="row" [class.move]="animate">
-      &lt;!&ndash;<div class="content-h">
+      <div class="content-h">
         <div class="time">{{ hours | number:'2.0'}} <span>h</span></div>
         <div class="content-btn" *ngIf="show">
           <button (click)="increment('H')"> + </button>
           <button (click)="decrement('H')"> - </button>
         </div>
-      </div>&ndash;&gt;
-      <div class="col-6 text-end content-m">
+      </div>-->
+     <!-- <div class="col-6 text-end content-m">
         <div class="time">{{ minutes | number:'2.0'}} <span>m</span></div>
-       &lt;!&ndash; <div class="content-btn" *ngIf="show">
+        <div class="content-btn" *ngIf="show">
           <button (click)="increment('M')"> + </button>
           <button (click)="decrement('M')"> - </button>
-        </div>&ndash;&gt;
-      </div>
-      <div class="col-6 text-start content-s">
+        </div>
+      </div>-->
+  <!--    <div class="col-6 text-start content-s">
         <div class="time">{{seconds | number:'2.0'}} <span>s</span></div>
-      &lt;!&ndash;  <div class="content-btn" *ngIf="show">
+        <div class="content-btn" *ngIf="show">
            <button (click)="increment('S')"> + </button>
            <button (click)="decrement('S')"> - </button>
-         </div>&ndash;&gt;
-      </div>
-  &lt;!&ndash;  <div class="col-12  text-center content-btn-action">
+         </div>
+      </div>-->
+    <!--<div class="col-12  text-center content-btn-action">
       <button type="button" (click)="start()" [disabled]="disabled">&#9658;</button>
       <button type="button" (click)="stop()">&#9724;</button>
       <button type="button" (click)="reset()">&#8635;</button>
-    </div>&ndash;&gt;
-  </div>
+    </div>-->
+<!--  </div>
 </div>-->
 
-<div class="container m-3">
+<div class="container-fluid m-3">
     <div class="row">
         <div class="col-12 text- content-s">
             <div >
@@ -39,11 +39,19 @@
         <div class="col-6 text-end content-m">
             <div class="time-box">
                 <div class="time">{{ minutes | number:'2.0'}} <span>m</span></div>
+                <div class="text-center content-m m-2" *ngIf="isBotonActivedTimer">
+                    <button class="mx-2" (click)="increment('M')"> + </button>
+                    <button (click)="decrement('M')"> - </button>
+                </div>
             </div>
         </div>
         <div class="col-6 text-start content-s">
             <div class="time-box">
                 <div class="time">{{seconds | number:'2.0'}} <span>s</span></div>
+                <div class="text-center content-s m-2" *ngIf="isBotonActivedTimer">
+                        <button class="mx-2" (click)="increment('S')"> + </button>
+                        <button  (click)="decrement('S')"> - </button>
+                </div>
             </div>
         </div>
     </div>

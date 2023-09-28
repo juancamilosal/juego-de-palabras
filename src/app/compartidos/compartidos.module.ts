@@ -7,17 +7,19 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TemporizadorComponent} from "./temporizador/temporizador.component";
 
 
+
+
 @NgModule({
     declarations: [
         NavbarComponent,
         AplicativoManualComponent,
-        TemporizadorComponent
+        TemporizadorComponent,
     ],
     imports: [
         CommonModule,
         RouterLink,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
     exports: [NavbarComponent, TemporizadorComponent]
 })

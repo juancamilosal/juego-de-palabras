@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 
 @Component({
@@ -7,12 +7,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./temporizador.component.scss']
 })
 export class TemporizadorComponent implements OnInit {
+  @Output() isFinished= new EventEmitter<boolean>();
+  @Input()isBotonActivedTimer:boolean=true;
   public hours: number = 0;
   public minutes: number = 1;
   public seconds: number = 0;
   private timer: any;
   private date = new Date();
-
   public show: boolean = true;
   public disabled: boolean = false;
   public animate: boolean = false;
@@ -75,6 +76,7 @@ export class TemporizadorComponent implements OnInit {
       //stop interval
       clearInterval(this.timer);
       this.animate = true;
+      this.finishedTimer();
       setTimeout(() => {
         this.stop();
       }, 5000);
@@ -109,6 +111,10 @@ export class TemporizadorComponent implements OnInit {
     this.minutes = 1;
     this.seconds = 0;
     this.stop();
+  }
+
+  finishedTimer=()=>{
+    this.isFinished.emit(true);
   }
 }
 

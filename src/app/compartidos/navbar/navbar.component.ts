@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TituloNavbarService} from "../../servicios/shared/titulo-navbar.service";
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  textoDeCabeera:string='BIENVENIDOS'
+
+
+  constructor(public tituloNavbarService:TituloNavbarService) {
+  }
+
 }

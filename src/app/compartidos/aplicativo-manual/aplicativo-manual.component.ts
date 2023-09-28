@@ -51,15 +51,6 @@ export class AplicativoManualComponent {
         setTimeout(()=>{
                 this.temporizador.start()
         }, 1000)
-        setTimeout(() => {
-            this.palabrasEnPantalla = ['Juego Terminado'];
-            this.isTemporizadorActived = false;
-            this.isBottonActive=false;
-            this.isBackActived = true;
-            this.isTemporizadorActived=false;
-            this.temporizador.stop()
-            return;
-        }, 60000);
     }
 
     siguientePalabra = (correcto: boolean) => {
