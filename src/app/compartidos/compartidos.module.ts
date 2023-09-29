@@ -5,19 +5,23 @@ import {RouterLink, RouterModule} from "@angular/router";
 import {AplicativoManualComponent} from './aplicativo-manual/aplicativo-manual.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TemporizadorComponent} from "./temporizador/temporizador.component";
+import {routes} from "../inicio/inicio-routing.module";
+
+
 
 
 @NgModule({
     declarations: [
         NavbarComponent,
         AplicativoManualComponent,
-        TemporizadorComponent
+        TemporizadorComponent,
     ],
     imports: [
         CommonModule,
         RouterLink,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterModule.forChild(routes)
     ],
     exports: [NavbarComponent, TemporizadorComponent]
 })

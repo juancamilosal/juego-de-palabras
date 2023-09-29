@@ -16,13 +16,14 @@
 }
 
 .time-box {
+  font-family: 'Titan One', cursive;
   display: inline-block;
-  background-color: yellowgreen; /* Color de fondo del cuadro */
-  color: black; /* Color del texto en el cuadro */
-  padding-left: 50px; /* Espacio interno del cuadro */
-  padding-right: 50px; /* Espacio interno del cuadro */
-  border-radius: 100px; /* Borde redondeado del cuadro */
-  border: solid black;
+  background-color: rebeccapurple; /* Color de fondo del cuadro */
+  color: white; /* Color del texto en el cuadro */
+  padding-left: 30px; /* Espacio interno del cuadro */
+  padding-right: 30px; /* Espacio interno del cuadro */
+  border-radius: 10px; /* Borde redondeado del cuadro */
+  border: solid black 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Sombra negra */
 }
 
@@ -30,6 +31,7 @@
   font-size: 36px;
 }
 
-.time span {
-  font-size: 24px;
+span  {
+  font-size: 30px;
+  font-family: 'Titan One', cursive;
 }

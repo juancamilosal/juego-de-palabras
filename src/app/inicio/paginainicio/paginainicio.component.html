@@ -8,10 +8,10 @@
         </div>
         <div class="row mt-5 " >
             <div class="col-6 text-end">
-                <button class="boton-inicio-juego me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo"> Palabras Aleatorias</button>
+                <button class="boton-inicio-juego me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo" (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=true"> Palabras Aleatorias</button>
             </div>
             <div class="col-6 text-start">
-                <button class="boton-inicio-juego me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo-manual"> Palabras Manuales</button>
+                <button class="boton-inicio-juego me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo-manual"  (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=false"> Palabras Manuales</button>
             </div>
         </div>
     </div>

@@ -1,15 +1,25 @@
-<div class="container ">
-    <div class="row mt-5"  >
-        <app-temporizador *ngIf="IsStarted"></app-temporizador>
-        <div class="pantalla col-12 text-center justify-content-center ">
-            <h1 class="listado-palabras mb-5 pt-5">{{listaDePalabras}}</h1>
+<div class="container justify-content-center text-center">
+    <div class="row mt-5 text-center" >
+        <app-temporizador  class="col-12"  (isFinished)="finalizarJuego()" [isBotonActivedTimer]="isButtonActiveTimer"></app-temporizador>
+        <div class="row" *ngIf="isValidAlert">
+        <div class="col-3">
+        </div>
+        <h5  class="col-6 alert alert-danger" role="alert">
+            Mínimo 30 segundos para iniciar el juego
+        </h5>
+        <div class="col-3">
+        </div>
+        </div>
+        <div class="pantalla col-12 text-center justify-content-center mt-4">
+            <h1 [ngClass]="claseListadoPalabras">{{listaDePalabras}} </h1>
         </div>
     </div>
     <ng-container *ngIf="isButtonActive">
         <div class="col-12  text-center">
-            <button class="iniciar btn btn-success mx-4 mt-4" (click)="iniciar()" >INICIAR</button> <br>
-            <button class="regresar btn btn-primary mx-4 mt-4" (click)="regresar()">REGRESAR</button>
+            <button class="iniciar btn btn-success mx-4 mt-4" (click)="iniciar()" >{{botonIniciar}}</button>
+            <button class="regresar btn btn-primary mx-4 mt-4" (click)="regresar()">{{botonRegresar}}</button>
         </div>
+
     </ng-container>
     <ng-container *ngIf="IsStarted">
         <div class="row text-center mt-5">
@@ -23,13 +33,19 @@
             </div>
         </div>
     </ng-container>
-    <ng-container *ngIf="IsScoringActivated">
+    <ng-container *ngIf="IsScoringActivated" >
         <div class="row mt-5">
-            <div class="col text-end">
-                <h1>PUNTAJE:</h1>
+            <div class="col text-end mt-2">
+                <h2 [ngClass]="claseTituloPuntaje">PUNTAJE</h2>
             </div>
-            <div class="col text-start">
-                <input class="puntaje btn btn-primary " placeholder="0" [value]="puntaje" disabled>
+            <div class="col text-start mb-4">
+                <label [ngClass]="clasePuntuacionFinal"> {{puntaje}} </label>
+            </div>
+            <div class="col text-start mb-4" *ngIf="IsButtonsFinishActived">
+                <div class="col-12  text-end">
+                    <button class="iniciar btn btn-success mb-5" routerLink="/aplicativo-manual">{{botonIniciar}}</button>
+                    <button class="regresar btn btn-primary"  routerLink="">{{botonRegresar}}</button>
+                </div>
             </div>
         </div>
     </ng-container>

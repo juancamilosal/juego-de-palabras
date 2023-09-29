@@ -26,43 +26,13 @@
                 </div>
             </div>
             <div class="col-12  text-center">
-                <button class="iniciar btn btn-success mx-4 mt-4" (click)="iniciar()" [disabled]="isBottonSatartActive">INICIAR</button>
-                <button class="regresar btn btn-primary mx-4 mt-4" (click)="regresar()">REGRESAR</button>
+                <button class="iniciar btn btn-success mx-4 mt-4" routerLink="/aplicativo" (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=false" [disabled]="isBottonSatartActive">SIGUIENTE</button>
+                <button class="regresar btn btn-primary mx-4 mt-4"  (click)="regresar()"  >REGRESAR</button>
             </div>
         </div>
     </ng-container>
 </div>
-<ng-container *ngIf="isReady">
-    <div class="row mt-5">
-        <app-temporizador *ngIf="isTemporizadorActived"></app-temporizador>
-        <div class="pantalla col-12 text-center justify-content-center ">
-            <h1 class="mb-5 pt-5">{{palabrasEnPantalla}}</h1>
-        </div>
-    </div>
-    <div class="row text-center mt-5">
-    <div>
-        <ng-container *ngIf="isBottonActive">
-        <button class="correct btn btn-success mx-4" (click)="siguientePalabra(true)"><i
-                class="imagen bi bi-check-circle mx-3" ></i>CORRRECTO
-        </button>
-        <button class="incorrect btn btn-danger mx-4"   (click)="siguientePalabra(false)"><i
-                class="imagen bi bi-x-circle mx-3"></i>PASAR
-        </button>
-        </ng-container>
-    </div>
-        <div class="row mt-5">
-            <div class="col text-end">
-                <h1>PUNTAJE: </h1>
-            </div>
-            <div class="col text-start">
-                <input class="puntaje btn btn-primary " placeholder="0" [value]="puntaje" disabled>
-            </div>
-        </div>
-        <div class="col-12  text-center">
-            <button class="regresar btn btn-primary mx-4 mt-4" (click)="volverAlJuego()"  *ngIf="isBackActived" >VOLVER A JUGAR</button>
-        </div>
-</div>
-</ng-container>
+
 
 
 
