@@ -1,13 +1,15 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, OnInit} from '@angular/core';
 import {Validators} from "@angular/forms";
 import {TemporizadorComponent} from "../temporizador/temporizador.component";
+import {TituloNavbarService} from "../../servicios/shared/titulo-navbar.service";
+import {ListaPalabrasIngresadasService} from "../../servicios/lista-palabras-ingresadas.service";
 
 @Component({
     selector: 'app-aplicativo-manual',
     templateUrl: './aplicativo-manual.component.html',
     styleUrls: ['./aplicativo-manual.component.scss']
 })
-export class AplicativoManualComponent {
+export class AplicativoManualComponent implements OnInit{
     @ViewChild (TemporizadorComponent) temporizador:TemporizadorComponent
     palabras: string;
     palabrasIngresadas: any[] = [];
@@ -20,14 +22,24 @@ export class AplicativoManualComponent {
     isBackActived: boolean = false;
     isTemporizadorActived:boolean=false;
 
+
+    constructor(public tituloNavbarService:TituloNavbarService, public listaPalabrasIngresadasService:ListaPalabrasIngresadasService) {
+    }
+    ngOnInit() {
+        this.tituloNavbarService.titulo='JUEGO DE PALABRAS';
+    }
+
+
     ingresarPalabras = (palabra: string) => {
         if (this.palabras == null || this.palabras == '' || this.palabras == ' ') {
             alert('Ingrese la frase o palabra en el campo asignado')
             this.isBottonSatartActive = true;
         } else {
             this.palabrasIngresadas.push(palabra);
+            this. listaPalabrasIngresadasService.listaPalabras=this.palabrasIngresadas;
             this.palabras = '';
             this.isBottonSatartActive = false;
+
         }
     }
 
@@ -42,34 +54,6 @@ export class AplicativoManualComponent {
         }
     }
 
-    iniciar = () => {
-        this.isReady = true;
-        this.palabrasEnPantalla = this.palabrasIngresadas[0];
-        console.log(this.palabrasIngresadas);
-        this.isTemporizadorActived=true;
-
-        setTimeout(()=>{
-                this.temporizador.start()
-        }, 1000)
-    }
-
-    siguientePalabra = (correcto: boolean) => {
-        if (correcto) {
-            this.isCorrect = correcto;
-            this.puntaje += 1;
-            this.palabrasEnPantalla = this.palabrasIngresadas.pop();
-        } else {
-            this.palabrasEnPantalla = this.palabrasIngresadas.pop();
-        }
-        if (this.palabrasIngresadas.length == 0 || this.palabras == null) {
-            this.palabrasEnPantalla = ['Juego terminado | Se acabaron las palabras'];
-            this.isBottonActive = false;
-            this.isBackActived = true;
-            this.temporizador.stop()
-            this.isTemporizadorActived=false;
-            this.temporizador.stop()
-        }
-    }
 
     volverAlJuego = () => {
         this.isReady = false;
