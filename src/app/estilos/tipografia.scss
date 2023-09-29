@@ -1,0 +1,28 @@
+.tipografia-navbar{
+  font-family: 'Titan One', cursive;
+  font-size: 100px;
+  color: black;
+}
+
+
+.titulo-navbar{
+  background-image: radial-gradient(circle, #ffe4d6, #ffded5, #ffd9d6, #ffd3d9, #ffcfdf, #f8c4da, #f0b9d6, #e7aed3, #d998c1, #cc83b0, #be6d9e, #b0578d);  height: 100px;
+}
+
+.titulo-inicial {
+  font-family: 'Titan One', cursive;
+  color: rgba(255, 244, 244, 0.07);
+  font-size: 80px;
+  font-weight: bold;
+  background-image: url("/assets/fondo-colores-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-text-stroke: 0.1px #2a2a2a; /* Borde de 3px en color negro */
+}
+
+.subtitulo-seleccion-modalidad {
+  font-family: 'Titan One', cursive;
+  color: purple;
+}
+

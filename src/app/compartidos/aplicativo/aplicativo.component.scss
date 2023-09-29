@@ -1,21 +1,10 @@
-.imagen {
-  width: 40px;
-  height: 40px;
-  color: white;
-}
-
-.incorrect {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.pantalla {
+.borde-pantalla {
   background-color: aliceblue;
   border: 2px  #c400ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.puntaje {
+.contador-puntaje {
   color: #000000;
   background-image: linear-gradient(to right top, #edff00, #f0ff48, #f3ff6b, #f6ff89, #f8ffa4, #f6f7a1, #f4ef9f, #f1e79d, #edd57e, #eac260, #e9ae44, #e89828);
   border-radius: 10px;
@@ -25,7 +14,7 @@
   font-family: 'Titan One', cursive;
 }
 
-.puntuacionFinal{
+.puntuacion-total{
   color: #000000;
   background-image: linear-gradient(to right top, #edff00, #f0ff48, #f3ff6b, #f6ff89, #f8ffa4, #f6f7a1, #f4ef9f, #f1e79d, #edd57e, #eac260, #e9ae44, #e89828);
   border-radius: 10px;
@@ -35,92 +24,14 @@
   font-family: 'Titan One', cursive;
 }
 
-h2{
+.titulo-puntaje{
   font-size: 30px;
   font-family: 'Titan One', cursive;
 }
-.titulo-puntaje{
+.titulo-puntaje-total{
   font-size: 100px;
   font-family: 'Titan One', cursive;
 }
-
-.iniciar {
-  background: #a656c0;
-  cursor: pointer;
-  border: none;
-  padding: 16px 41px;
-  color: #f3ebfd;
-  font-size: 24px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 24px;
-  transition: transform 0.3s ease; /* Agregamos una transición para que el cambio de tamaño sea suave */
-}
-
-.iniciar:hover {
-  transform: scale(1.3); /* Cuando el cursor se posa sobre el botón, se agranda un 10% */
-}
-
-.iniciar::before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #C400FFFF, #DE6AEAFF, #9C62A9FF, #C400FFFF, #DE6AEAFF, #9C62A9FF);
-  background-size: 800%;
-  border-radius: 10px;
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-
-.regresar {
-  background: #0002ff;
-  cursor: pointer;
-  border: none;
-  padding: 16px 32px;
-  color: #f3ebfd;
-  font-size: 24px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 24px;
-  transition: transform 0.3s ease; /* Agregamos una transición para que el cambio de tamaño sea suave */
-}
-
-.regresar:hover {
-  transform: scale(1.3); /* Cuando el cursor se posa sobre el botón, se agranda un 10% */
-}
-
-.regresar::before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #0002ff, #010270, #0053ff, #2a2a77, #0002ff, #6700ff, #0053ff, #9191cc);
-  background-size: 800%;
-  border-radius: 10px;
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-}
-
 
 h1 {
   text-transform: uppercase;
@@ -147,36 +58,7 @@ h1 {
   -webkit-text-stroke: 0.1px #2a2a2a; /* Borde de 3px en color negro */
 }
 
-.correct{
-  background: #56ee57;
-  cursor: pointer;
-  border: none;
-  padding: 16px 32px;
-  color: #f3ebfd;
-  font-size: 24px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 24px;
-  transition: transform 0.3s ease; /* Agregamos una transición para que el cambio de tamaño sea suave */
-}
 
-.correct:hover {
-  transform: scale(1.1); /* Cuando el cursor se posa sobre el botón, se agranda un 10% */
-}
 
-.incorrect{
-  background: #e75656;
-  cursor: pointer;
-  border: none;
-  padding: 16px 32px;
-  color: #f3ebfd;
-  font-size: 24px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 24px;
-  transition: transform 0.3s ease; /* Agregamos una transición para que el cambio de tamaño sea suave */
-}
 
-.incorrect:hover {
-  transform: scale(1.1); /* Cuando el cursor se posa sobre el botón, se agranda un 10% */
-}
+

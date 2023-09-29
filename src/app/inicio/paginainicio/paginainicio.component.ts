@@ -5,7 +5,7 @@ import {ListaPalabrasIngresadasService} from "../../servicios/lista-palabras-ing
 @Component({
   selector: 'app-paginainicio',
   templateUrl: './paginainicio.component.html',
-  styleUrls: ['./paginainicio.component.scss']
+  styleUrls: ['./paginainicio.component.scss', '../../estilos/botones.scss', '../../estilos/tipografia.scss']
 })
 export class PaginainicioComponent implements OnInit{
 

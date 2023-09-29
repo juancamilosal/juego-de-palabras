@@ -47,6 +47,7 @@ export class AplicativoManualComponent implements OnInit{
         history.back()
     }
 
+
     eliminarPalabra = (index: number) => {
         this.palabrasIngresadas.splice(index, 1);
         if (this.palabrasIngresadas.length == 0) {
