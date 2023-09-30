@@ -2,32 +2,40 @@
     <ng-container *ngIf="!isReady">
         <div class="row mt-5">
             <div class="pantalla col-12 text-center justify-content-center ">
-                <h1 class="mb-5 pt-5">CUANDO ESTÉN LISTOS PRESIONE INICIAR</h1>
+                <h1 class="titulo-inicial-aplicativo-manual  pt-5">Cuado estén listos presionen SIGUIENTE</h1>
             </div>
         </div>
         <div class="row m-5">
-            <div class="col-4 mt-5">
-                <label class="palabras mb-2">Ingrese aquí la frase o palabra</label> <br>
-                <input type="text" class="form-control" aria-label="Sizing example input"
+            <div class="col-4">
+                <label class="subtitulo-seleccion-modalidad mb-2">Ingrese aquí la frase o palabra</label> <br>
+                <input type="text" class="inputs form-control" aria-label="Sizing example input"
                        aria-describedby="inputGroup-sizing-sm"
                        [(ngModel)]="palabras" (keydown.enter)="ingresarPalabras(palabras)">
                 <div class="mt-3">
-                    <button class="btn btn-secondary" (click)="ingresarPalabras(palabras)">INGRESAR</button>
+                    <button class="button-ingresar btn btn-secondary" (click)="ingresarPalabras(palabras)">INGRESAR</button>
                 </div>
             </div>
-            <div class="col-8 mt-5">
-                <h1 class="text-center mt-2">Palabras ingresadas</h1>
+            <div class="col-8">
+                <h1 class="subtitulo-seleccion-modalidad  text-end" data-bs-target="info"
+                    title="Para jugar debe agregar una lista de palabras">Palabras ingresadas</h1>
                 <div class="contenedor-palabras-ingresadas">
                     <div>
-                        <p class="palabras-ingresadas ms-5"
-                           *ngFor="let palabra of palabrasIngresadas; let i=index">{{i +1 + '- ) '}} {{palabra}} <i
-                                class="bi bi-x-circle-fill icon-rojo ms-5 " (click)="eliminarPalabra(i)">  Eliminar</i></p>
+                        <p *ngIf="isWordPush" class="palabras-ingresadas-info  text-end ms-5" data-bs-target="info"
+                           title="Para jugar debe agregar una lista de palabras"><i
+                                class="bi bi-info-square-fill icons ms-5 "></i> Ingrese mínimo una palabra para jugar
+                        </p>
+                        <p class="listado-palabras-pantalla-aplicativo-manual  text-end ms-5"
+                           *ngFor="let palabra of palabrasIngresadas; let i=index">{{i + 1 + ') '}} {{palabra}} <i
+                                class="bi bi-x-circle-fill icon-delet ms-5 " (click)="eliminarPalabra(i)"></i></p>
                     </div>
                 </div>
             </div>
-            <div class="col-12  text-center">
-                <button class="iniciar btn btn-success mx-4 mt-4" routerLink="/aplicativo" (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=false" [disabled]="isBottonSatartActive">SIGUIENTE</button>
-                <button class="regresar btn btn-primary mx-4 mt-4"  routerLink="">REGRESAR</button>
+            <div class="col-12  text-end">
+                <button class="button-iniciar btn btn-success mx-4 mt-4" routerLink="/aplicativo"
+                        (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=false"
+                        [disabled]="isBottonSatartActive">SIGUIENTE
+                </button>
+                <button class="button-regresar btn btn-primary mx-4 mt-4" routerLink="">REGRESAR</button>
             </div>
         </div>
     </ng-container>

@@ -2,7 +2,7 @@ import {Component, ViewChild, OnInit} from '@angular/core';
 import {TemporizadorComponent} from "../temporizador/temporizador.component";
 import {ApiService} from "../../servicios/apis/api.service";
 import {TituloNavbarService} from "../../servicios/shared/titulo-navbar.service";
-import {ListaPalabrasIngresadasService} from "../../servicios/lista-palabras-ingresadas.service";
+import {ListaPalabrasIngresadasService} from "../../servicios/shared/lista-palabras-ingresadas.service";
 
 
 @Component({
@@ -24,7 +24,7 @@ export class AplicativoComponent implements OnInit {
     clasePuntuacionFinal = 'puntaje text-center';
     audioCorrect = new Audio('assets/audios/correcto.mp3');
     efectoSoundBuuu = new Audio('assets/audios/bu.mp3');
-    botonIniciar: string = 'INICIO';
+    botonIniciar: string = 'INICIAR';
     botonRegresar: string = 'REGRESAR';
     isValidAlert: boolean = false;
     isButtonActiveTimer: boolean = true;
@@ -38,7 +38,10 @@ export class AplicativoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.tituloNavbarService.titulo = 'JUEGO DE PALABRAS';
+        this.tituloNavbarService.titulo = 'Juego de palabras aleatorias';
+        if (!this.listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias){
+            this.tituloNavbarService.titulo = 'Juego de palabras manuales';
+        }
     }
 
     iniciar = () => {
@@ -103,7 +106,7 @@ export class AplicativoComponent implements OnInit {
         }
 
         if (this.palabras.length === 0 && this.listaPalabrasIngresadasService.listaPalabras.length === 0) {
-            this.listaDePalabras = ['No hay más palabras']
+            this.listaDePalabras = ['Todas las palabras fueron utilzadas']
             this.IsStarted = false;
             this.isButtonActiveTimer = false;
             this.temporizador.stop()

@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {TituloNavbarService} from "../../servicios/shared/titulo-navbar.service";
-import {ListaPalabrasIngresadasService} from "../../servicios/lista-palabras-ingresadas.service";
+import {ListaPalabrasIngresadasService} from "../../servicios/shared/lista-palabras-ingresadas.service";
 
 @Component({
   selector: 'app-paginainicio',

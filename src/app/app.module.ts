@@ -6,6 +6,7 @@ import {RouterModule} from "@angular/router";
 import {CompartidosModule} from "./compartidos/compartidos.module";
 import {HttpClientModule} from "@angular/common/http";
 
+
 @NgModule({
   declarations: [
     AppComponent,
