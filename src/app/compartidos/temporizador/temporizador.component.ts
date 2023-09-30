@@ -4,7 +4,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'app-temporizador',
   templateUrl: './temporizador.component.html',
-  styleUrls: ['./temporizador.component.scss']
+  styleUrls: ['./temporizador.component.scss', '../../estilos/botones.scss',  '../../estilos/tipografia.scss']
 })
 export class TemporizadorComponent implements OnInit {
   @Output() isFinished= new EventEmitter<boolean>();

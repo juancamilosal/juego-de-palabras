@@ -2,16 +2,16 @@ import {Component, ViewChild, OnInit} from '@angular/core';
 import {Validators} from "@angular/forms";
 import {TemporizadorComponent} from "../temporizador/temporizador.component";
 import {TituloNavbarService} from "../../servicios/shared/titulo-navbar.service";
-import {ListaPalabrasIngresadasService} from "../../servicios/lista-palabras-ingresadas.service";
+import {ListaPalabrasIngresadasService} from "../../servicios/shared/lista-palabras-ingresadas.service";
 
 @Component({
     selector: 'app-aplicativo-manual',
     templateUrl: './aplicativo-manual.component.html',
-    styleUrls: ['./aplicativo-manual.component.scss']
+    styleUrls: ['./aplicativo-manual.component.scss', '../../estilos/botones.scss',  '../../estilos/tipografia.scss']
 })
 export class AplicativoManualComponent implements OnInit{
     @ViewChild (TemporizadorComponent) temporizador:TemporizadorComponent
-    palabras: string;
+    palabras: string
     palabrasIngresadas: any[] = [];
     palabrasEnPantalla: any[] = [];
     isReady: boolean = false;
@@ -21,12 +21,15 @@ export class AplicativoManualComponent implements OnInit{
     isBottonSatartActive: boolean = true;
     isBackActived: boolean = false;
     isTemporizadorActived:boolean=false;
+    isWordPush:boolean=true;
 
 
-    constructor(public tituloNavbarService:TituloNavbarService, public listaPalabrasIngresadasService:ListaPalabrasIngresadasService) {
+
+    constructor(public tituloNavbarService:TituloNavbarService, public listaPalabrasIngresadasService:ListaPalabrasIngresadasService,) {
     }
     ngOnInit() {
-        this.tituloNavbarService.titulo='JUEGO DE PALABRAS';
+        this.tituloNavbarService.titulo='Juego de palabras manuales';
+
     }
 
 
@@ -35,11 +38,11 @@ export class AplicativoManualComponent implements OnInit{
             alert('Ingrese la frase o palabra en el campo asignado')
             this.isBottonSatartActive = true;
         } else {
+            this.isWordPush=false;
             this.palabrasIngresadas.push(palabra);
-            this. listaPalabrasIngresadasService.listaPalabras=this.palabrasIngresadas;
+            this.listaPalabrasIngresadasService.listaPalabras=this.palabrasIngresadas;
             this.palabras = '';
             this.isBottonSatartActive = false;
-
         }
     }
 
@@ -47,10 +50,12 @@ export class AplicativoManualComponent implements OnInit{
         history.back()
     }
 
+
     eliminarPalabra = (index: number) => {
         this.palabrasIngresadas.splice(index, 1);
         if (this.palabrasIngresadas.length == 0) {
             this.isBottonSatartActive = true;
+                this.isWordPush=true;
         }
     }
 

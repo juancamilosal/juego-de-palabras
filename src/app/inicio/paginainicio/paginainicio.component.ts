@@ -1,11 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import {TituloNavbarService} from "../../servicios/shared/titulo-navbar.service";
-import {ListaPalabrasIngresadasService} from "../../servicios/lista-palabras-ingresadas.service";
+import {ListaPalabrasIngresadasService} from "../../servicios/shared/lista-palabras-ingresadas.service";
 
 @Component({
   selector: 'app-paginainicio',
   templateUrl: './paginainicio.component.html',
-  styleUrls: ['./paginainicio.component.scss']
+  styleUrls: ['./paginainicio.component.scss', '../../estilos/botones.scss', '../../estilos/tipografia.scss']
 })
 export class PaginainicioComponent implements OnInit{
 

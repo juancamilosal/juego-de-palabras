@@ -1,17 +1,19 @@
 <div class="container-fluid  text-center position-absolute top-50 start-50 translate-middle">
     <div>
-        <div class="hero col-12 ">
-            <h1 class="titulo">JUEGO DE PALABRAS</h1>
+        <div class="col-12">
+            <img src="assets/foto-inicio-arriba.png">
+            <h1 class="titulo-inicial">PISTAS DE PALABRAS</h1>
+            <img class="" src="assets/foto-inicio-abajo.png">
         </div>
-        <div class="col ">
-            <h3>Seleccione la modalidad del juego</h3>
+        <div class="col mt-5">
+            <h2 class="subtitulo-seleccion-modalidad" >Seleccione la modalidad del juego</h2>
         </div>
         <div class="row mt-5 " >
             <div class="col-6 text-end">
-                <button class="boton-inicio-juego me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo" (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=true"> Palabras Aleatorias</button>
+                <button class="button-inicio-modalidad me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo" (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=true"> Palabras Aleatorias</button>
             </div>
             <div class="col-6 text-start">
-                <button class="boton-inicio-juego me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo-manual"  (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=false"> Palabras Manuales</button>
+                <button class="button-inicio-modalidad me-5 btn btn-secondary" name="inicio-juego" routerLink="aplicativo-manual" (click)="listaPalabrasIngresadasService.isJuegoDePalabrasAleatorias=false"> Palabras Manuales</button>
             </div>
         </div>
     </div>
